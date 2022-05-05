@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/index.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title>客户端</title>
+    <base target="_blank">
+</head>
+<body>
+<h1>用户小王</h1><br/>
+<button onclick="buttonCreate()">与服务器建立websocket链接</button>
+<button onclick="buttonClose()">关闭websocket链接</button>
+<p>链接状态：</p>
+<h1 id="status">未建立链接</h1>
+
+<p>给用户小李发送信息：</p>
+<form method="post" action="/server" target="nm_iframe">
+    <label>目标用户：</label>
+    <input name = "user" placeholder="请输入接收信息的用户名"/>
+    <label>信息：</label>
+    <input name = "msg" placeholder="请输入信息"/>
+    <input type="submit" id="id_submit" name="nm_submit" value="发送" onclick="changeNum()"/>
+</form>
+
+<p>从服务器发来的信息：</p>
+<h1 id="message"></h1>
+</body>
+</html>
